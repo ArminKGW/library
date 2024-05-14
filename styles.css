@@ -1,0 +1,95 @@
+:root{
+    --brown-bg: rgb(104, 52, 47);
+    --white-font: rgb(215, 204, 204);
+}
+
+body{
+    font-family: "Roboto", Helvetica, Arial, sans-serif, system-ui, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template: 100px 1fr 100px / auto; 
+    height: 100vh;
+}
+
+.header{
+    /*font-family*/
+    display: grid;
+    align-items: center;
+    padding-left: 200px;
+    grid-area: 1 / 1 / 2 / 2;
+    font-size: 3rem;
+    font-weight: 700;
+    background-color: var(--brown-bg);
+    color: var(--white-font);
+}
+
+.container{
+    grid-area: 2 / 1 / 3 / 1;
+    background-color: #b86338;
+    display: grid;
+    grid-template-rows: 80px 1fr; 
+}
+
+.add-book{
+    display: grid;
+    justify-items: center;
+    align-items: end;
+}
+
+.add-book > button{
+    color: rgb(235, 228, 228);
+    background-color: rgb(80, 76, 76);
+    height: 50px;
+    width: 170px;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.add-book > button:hover{
+    background-color: rgb(85, 81, 81);
+    cursor: pointer;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 100px;
+    padding: 50px 200px;
+}
+
+.card{
+    height: 300px;
+    background-color: var(--brown-bg);
+    color: var(--white-font);
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+.book{
+    grid-row: 1;
+    display: grid;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer{
+    grid-area: 3 / 1 / 4 / 1;
+    background-color: rgb(53, 51, 51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
