@@ -37,12 +37,27 @@ function displayBook(library){
         author.classList.add("author");
         const pagesNumber = document.createElement("div");
         pagesNumber.classList.add("pages-number");
+        const buttons = document.createElement("div");
+        buttons.classList.add("buttons");
+        const isRead = document.createElement("button");
+        if(library[i].isRead === true){
+            isRead.classList.add("read");
+            isRead.textContent = "Read";
+        }
+        else if(library[i].isRead === false){
+            isRead.classList.add("not-read");
+            isRead.textContent = "Not read";
+        }
+        const remove = document.createElement("button");
+        remove.classList.add("remove");
         title.textContent = "Title: " + library[i].title;
         author.textContent = "Author: " + library[i].author;
         pagesNumber.textContent = "Number of Pages: " + library[i].pagesNumber;
-        cardContainer.appendChild(card);
-        card.appendChild(book);
+        remove.textContent = "Remove";
         book.append(title, author, pagesNumber);
+        buttons.append(isRead, remove);
+        card.append(book, buttons);
+        cardContainer.appendChild(card);
     }
 }
 

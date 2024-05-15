@@ -1,10 +1,12 @@
 :root{
     --brown-bg: rgb(104, 52, 47);
     --white-font: rgb(215, 204, 204);
+    --button-hover: rgb(208, 208, 208);
 }
 
 body{
-    font-family: "Roboto", Helvetica, Arial, sans-serif, system-ui, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /*font-family*/
+    font-family: "Roboto", sans-serif, system-ui, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 0;
     padding: 0;
     display: grid;
@@ -50,8 +52,8 @@ body{
 }
 
 .add-book > button:hover{
-    background-color: rgb(85, 81, 81);
-    cursor: pointer;
+    background-color: rgb(68, 65, 65);
+    color: var(--button-hover);
 }
 
 .card-container{
@@ -62,21 +64,68 @@ body{
 }
 
 .card{
-    height: 300px;
+    height: 320px;
     background-color: var(--brown-bg);
     color: var(--white-font);
     text-align: center;
     font-size: 22px;
     font-weight: 700;
+    border-radius: 12px;
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
 }
 
 .book{
     grid-row: 1;
     display: grid;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
+}
+
+.buttons{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: start;
+    gap: 4px;
+}
+
+.card  button{
+    height: 45px;
+    width: 350px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0;
+    color: white;
+}
+
+button.read{
+    background-color: rgb(7, 119, 7);
+}
+
+button.read:hover{
+    background-color: rgb(10, 107, 10);
+    color: var(--button-hover);
+}
+
+button.not-read{
+    background-color: rgb(121, 22, 22);
+}
+
+button.not-read:hover{
+    background-color: rgb(102, 19, 19);
+    color: var(--button-hover);
+}
+
+button.remove{
+    background-color: rgb(90, 86, 86);
+}
+
+button.remove:hover{
+    background-color: rgb(85, 79, 79);
+    color: var(--button-hover);
 }
 
 .footer{
@@ -92,4 +141,8 @@ body{
 a{
     text-decoration: none;
     color: white;
+}
+
+button:hover{
+    cursor: pointer;
 }
