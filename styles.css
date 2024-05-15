@@ -58,13 +58,14 @@ body{
 
 .card-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 100px;
     padding: 50px 200px;
 }
 
 .card{
     height: 320px;
+    width: 435px;
     background-color: var(--brown-bg);
     color: var(--white-font);
     text-align: center;

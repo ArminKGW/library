@@ -2,7 +2,42 @@ const myLibrary = [];
 const container = document.querySelector(".container");
 const cardContainer = document.querySelector(".card-container");
 
+addBookToLibrary(myLibrary);
+displayBook(myLibrary);
 
+
+const readButtons = document.querySelectorAll(".read, .not-read");
+readButtons.forEach((item) => {
+    if(item.classList.contains("read")){
+        item.textContent = "Read";
+    }
+    else if(item.classList.contains("not-read")){
+        item.textContent = "Not read";
+    }
+});
+readButtons.forEach((item) => {
+    item.addEventListener("click", (event) => {
+        item.classList.toggle("read");
+        item.classList.toggle("not-read");
+        if(item.classList.contains("read")){
+            item.textContent = "Read";
+        }
+        else{
+            item.textContent = "Not read";
+        }
+    });
+});
+
+
+const removeButtons = document.querySelectorAll(".remove");
+removeButtons.forEach((item) => {
+    item.addEventListener("click", (event) => {
+        const removeCard = item.closest(".card");
+        if(removeCard){
+            removeCard.remove();
+        }
+    });
+});
 
 function Book(title, author, pagesNumber, isRead){
     this.title = title;
@@ -11,12 +46,13 @@ function Book(title, author, pagesNumber, isRead){
     this.isRead = isRead;
 }
 
+
 function addBookToLibrary(library){
     const book1 = new Book("book1", "man", 100, true);
     const book2 = new Book("book2", "ali", 200, false);
     const book3 = new Book("book3", "sepehr", 300, true);
-    const book4 = new Book("book4", "majid", 400, false);
-    const book5 = new Book("book5", "sobhan", 500, true);
+    const book4 = new Book("book4", "sobhan", 400, true);
+    const book5 = new Book("book5", "majid", 500, false);
     library.push(book1);
     library.push(book2);
     library.push(book3);
@@ -26,7 +62,6 @@ function addBookToLibrary(library){
 
 function displayBook(library){
     for(let i = 0; i < library.length; i++){
-        console.log(library[i]);
         const card = document.createElement("div");
         card.classList.add("card");
         const book = document.createElement("div");
@@ -42,11 +77,9 @@ function displayBook(library){
         const isRead = document.createElement("button");
         if(library[i].isRead === true){
             isRead.classList.add("read");
-            isRead.textContent = "Read";
         }
         else if(library[i].isRead === false){
             isRead.classList.add("not-read");
-            isRead.textContent = "Not read";
         }
         const remove = document.createElement("button");
         remove.classList.add("remove");
@@ -61,5 +94,7 @@ function displayBook(library){
     }
 }
 
-addBookToLibrary(myLibrary);
-displayBook(myLibrary);
+
+
+
+
