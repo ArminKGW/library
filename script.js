@@ -30,6 +30,10 @@ submitBtn.addEventListener("click", (e) => {
     }
 });
 
+dialog.addEventListener("close", (e) => {
+    document.activeElement.blur();
+});
+
 cardContainer.addEventListener("click", (e) => {
     if(e.target.classList.contains("read") || e.target.classList.contains("not-read")){
         const readCard = e.target.closest(".card");
