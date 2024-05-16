@@ -11,7 +11,7 @@ body{
     padding: 0;
     display: grid;
     grid-template: 100px 1fr 100px / auto; 
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .header{
@@ -147,3 +147,108 @@ a{
 button:hover{
     cursor: pointer;
 }
+
+dialog{
+    height: 370px;
+    width: 300px;
+    border: 0;
+    border-radius: 8px;
+    background-color: rgb(51, 49, 49);
+}
+
+.dialog-container{
+    display: grid;
+    justify-items: center;
+    color: white;
+}
+
+input + div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px;
+}
+
+label{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+label:hover{
+    cursor: pointer;
+}
+
+.input, button{
+    font-family: inherit;
+    box-sizing: border-box;
+    color: inherit;
+}
+
+.input{
+    margin-bottom: 24px;
+    outline: none;
+}
+
+.input{
+    display: block;
+}
+
+dialog button, dialog .input{
+    height: 40px;
+    width: 250px;
+    border-radius: 6px;
+    border: 0;
+    font-size: 20px;
+}
+
+dialog .input{
+    background-color: rgb(72, 70, 70);
+}
+
+dialog button{
+    background-color: rgb(30, 110, 0);
+    font-weight: 700;
+}
+
+dialog button:hover{
+    background-color: rgb(31, 108, 2);
+    color: rgb(200, 199, 199);
+}
+
+[placeholder="Title"],
+[placeholder="Author"],
+[placeholder="Pages"]{
+    padding-left: 8px;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    position: relative;
+    height: 1.4em;
+    width: 1.4em;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-left: 8px;
+    background-color: rgb(72, 70, 70);
+    color: rgb(25, 180, 25);
+}
+
+input[type="checkbox"]::before{
+    content: "✔";
+    position: absolute;
+    font-size: 2em;
+    top: -0.3em;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before{
+    visibility: visible;
+}
+
+input[type="checkbox"]:hover{
+    border-color: white;
+    cursor: pointer;
+}
+
+
+
