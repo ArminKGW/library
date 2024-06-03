@@ -59,11 +59,13 @@ cardContainer.addEventListener("click", (e) => {
     }
 });
 
-function Book(title, author, pagesNumber, isRead){
-    this.title = title;
-    this.author = author;
-    this.pagesNumber = pagesNumber;
-    this.isRead = isRead;
+class Book{
+    constructor(title, author, pagesNumber, isRead){
+        this.title = title;
+        this.author = author;
+        this.pagesNumber = pagesNumber;
+        this.isRead = isRead;
+    }
 }
 
 
