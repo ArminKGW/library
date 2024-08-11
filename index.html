@@ -18,16 +18,25 @@
         <dialog>
             <div class="dialog-container">
                 <h2> Add new book</h2>
-                <form>
-                <input class="input" type="text" id="book-title" name="book-title" placeholder="Title" required>
-                <input class="input" type="text" id="book-author" name="book-author" placeholder="Author" required>
-                <input class="input" type="number" id="book-page-number" name="book-page-number" placeholder="Pages" required>
-                <div>
-                    <label for="is-read">Have you read it?</label>
-                    <input type="checkbox" id="is-read" name="book-is-read">
-                </div>
-                <button type="submit">Submit</button>
-            </form>
+                <form novalidate>
+                    <div>
+                        <input class="input" type="text" id="book-title" name="book-title" placeholder="Title" maxlength="30" required>
+                    </div>
+                    
+                    <div>
+                        <input class="input" type="text" id="book-author" name="book-author" placeholder="Author" maxlength="30" required>
+                    </div>
+                    <div>
+                        <input class="input" type="number" id="book-page-number" name="book-page-number" placeholder="Pages" min="1" max="9999" required>
+
+                    </div>
+                    
+                    <div>
+                        <label for="is-read">Have you read it?</label>
+                        <input type="checkbox" id="is-read" name="book-is-read">
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </dialog>
     </div>
